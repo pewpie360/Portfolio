@@ -39,33 +39,61 @@
                       initiatives of a dynamic organization.</p>
                 
                 <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">School Organizations</p>
-                    <p class="tab-links">Educational Background</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('Educ')">Educational Background</p>
                 </div>
-                <div class="tab-contents active-tab">
+                <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>Exploratory Data Analysis</span><br>Finding Patterns and Solutions on data</li>
                         <li><span>Machine Learning</span><br>Building and evaluating ml algorithm</li>
                         <li><span>Data Engineer</span><br>Building and Integrating data pipelines</li>
                     </ul>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents" id="Experience">
                     <ul>
-                        <li><span>Google Developer Students Club</span><br>Data Ambassador</li>
-                        <li><span>External Grantees Association</span><br>General Secretary</li>
+                        <li><span>AWS</span><br>Machine Learning</li>
+                        <li><span>AWS</span><br>Cloud Computing</li>
+                        <li><span>Google</span><br>Intro to Looker</li>
                     </ul>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents" id="Educ">
                     <ul>
                         <li><span>2018</span><br>Bugo National High School</li>
                         <li><span>2021</span><br>STI College Cagayan de Oro City</li>
-                        <li><span>2025</span><br>University of Science and Technology of Southern Philippines</li>
+                        <li><span>2021 - Current</span><br>University of Science and Technology of Southern Philippines</li>
                     </ul>
                 </div>
             </div>
             </div>
         </div>
     </div>
+
+<!---- Organizations ---->
+<div id="organizations">
+    <div class="container">
+        <h1 class="sub-title">Organizations</h1>
+        <div class="organization-list">
+            
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
 </body>
 </html>
